@@ -1,11 +1,10 @@
+const catModel = require("../models/cat");
+
 const resolvers = {
   Query: {
     fetchCats: (root, arg) => {
       // this is where you can fetch from a remote database and return the data
-      return [{
-        id: 1,
-        name: 'Betsy'
-      }]
+      return catModel.find({});
     }
   },
   Mutation: {

@@ -25,6 +25,7 @@ const resolvers = {
             throw new Error('Unable to connect to remote database');
           }
           return catModel.find({id});
+          return success;
       }
 
     },

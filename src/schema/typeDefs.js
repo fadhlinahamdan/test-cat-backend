@@ -30,7 +30,7 @@ const typeDefs = gql`
   type CatResponse {
     success: Boolean!
     error: String
-    data: Cat
+    data: [Cat]
   }
 `;
 

@@ -20,15 +20,24 @@ const resolvers = {
       //   data: null
       // }
 
-      
+      fetchCats: ({id}) => {
+          if (!fetchCats[id]) {
+            throw new Error('Unable to connect to remote database');
+          }
+          return catModel.find({id});
+      }
+
     },
     likeCat: (root, arg) => {
       // here is where you make a request to the remote database to make some change, then return a response
-      return {
-        success: false,
-        error: 'Unable to connect to remote database',
-        data: null
-      }
+      // return {
+      //   success: false,
+      //   error: 'Unable to connect to remote database',
+      //   data: null
+      // }
+      
+      return catModel.find({});
+
     }
   }
 }

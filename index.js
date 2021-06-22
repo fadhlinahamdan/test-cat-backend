@@ -1,12 +1,18 @@
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
-import { typeDefs, resolvers } from "./schema";
+import { typeDefs, resolvers } from "./src/schema";
+import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
 
 async function startApolloServer() {
   const app = express();
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    debug: true,
+    tracing: true,
+    introspection: true,
+    playground: true,
   });
   await server.start();
 
@@ -28,3 +34,24 @@ try {
 } catch (error) {
   console.log("An Error Occured!", error);
 }
+
+console.log("Start this section")
+
+// const uri = "mongodb+srv://user:testcat@cluster0.vu4ve.mongodb.net/Test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(async err => {
+//   console.log("starting to fetch")
+//   const collection = await client.db("test").collection("Cat").find({} );
+//   client.close();
+//   console.log("closed");
+//   console.log("error?", err);
+// });
+
+mongoose.connect(
+  "mongodb+srv://user:testcat@cluster0.vu4ve.mongodb.net/Test?retryWrites=true&w=majority",  
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  }
+);

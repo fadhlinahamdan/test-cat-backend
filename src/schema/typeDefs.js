@@ -13,6 +13,18 @@ const typeDefs = gql`
   type Cat {
     id: ID!
     name: String!
+    age: Int
+    description: String
+    image_url: String
+    background_color: String
+    owner: [Owner]
+  }
+
+  type Owner {
+    name: String
+    phone: String
+    email: String
+    address: String
   }
 
   type CatResponse {

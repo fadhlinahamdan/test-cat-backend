@@ -1,5 +1,10 @@
-import mongoose, { Schema } from 'mongoose';
-import { composeWithMongoose } from 'graphql-compose-mongoose';
+// ES6 version
+// import mongoose, { Schema } from 'mongoose';
+// import { composeWithMongoose } from 'graphql-compose-mongoose';
+
+// ES5 version
+const mongoose, { Schema } = require('mongoose');
+const composeWithMongoose = require('graphql-compose-mongoose');
 
 const CatSchema = new mongoose.Schema(
     {

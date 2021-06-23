@@ -1,3 +1,4 @@
+// ES5 Version
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
@@ -6,8 +7,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    unlikeCat: CatResponse!
-    likeCat: CatResponse!
+    unlikeCat(Cat.id: ID!): CatResponse!
+    likeCat(Cat.id: ID!): CatResponse!
   }
 
   type Cat {

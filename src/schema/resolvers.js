@@ -1,3 +1,4 @@
+// ES5 version
 const catModel = require('../models/cat');
 
 const resolvers = {
@@ -34,10 +35,14 @@ const resolvers = {
       // return {
       //   success: false,
       //   error: 'Unable to connect to remote database',
-      //   data: null
+      //   data: catModel.find({id})
       // }
       
-      return catModel.find({});
+      return { 
+        success: false,
+        error: 'Unable to connect',
+        data: catModel.find({id})
+      } 
 
     }
   }

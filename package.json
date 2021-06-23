@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm index.js"
+    "start": "node index.js",
+    "build": ""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-datasource-mongodb": "^0.4.3",
     "apollo-server-express": "^2.22.2",
+    "dotenv": "^10.0.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
@@ -21,7 +23,8 @@
     "mongoose-timestamp": "^0.6.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
     "nodemon": "^2.0.7"
   }
-
 }

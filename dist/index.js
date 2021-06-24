@@ -1,16 +1,15 @@
 // ES6 version
-// import express from "express";
-// import { ApolloServer } from "apollo-server-express";
-// import { typeDefs, resolvers } from "./src/schema";
-// import mongoose from 'mongoose';
-// import { MongoClient } from 'mongodb';
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { typeDefs, resolvers } from "../src/schema";
+import mongoose from 'mongoose';
 
 // ES5 version
-const express = require('express');
-const ApolloServer = require('apollo-server');
-const { typeDefs, resolvers } = require('./src/schema');
-const mongoose = require('mongoose');
-const MongoClient = require('mongodb');
+// const express = require('express');
+// const ApolloServer = require('apollo-server-express');
+// const { typeDefs, resolvers } = require('./src/schema');
+// const mongoose = require('mongoose');
+// const MongoClient = require('mongodb');
 
 async function startApolloServer() {
   const app = express();

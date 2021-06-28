@@ -7,8 +7,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    unlikeCat(Cat.id: ID!): CatResponse!
-    likeCat(Cat.id: ID!): CatResponse!
+    unlikeCat: CatResponse!
+    likeCat: CatResponse!
   }
 
   type Cat {
